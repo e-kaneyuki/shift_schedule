@@ -1,5 +1,5 @@
 current directory: /Users/kaneyukieita/git/shift_schedule/vendor/bundler/ruby/3.0.0/gems/pg-1.2.3/ext
-/Users/kaneyukieita/.rbenv/versions/3.0.1/bin/ruby -I /Users/kaneyukieita/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20210611-5553-g79bjg.rb extconf.rb --with-pg-config\=/usr/pgsql-9.3/bin/pg_config
+/Users/kaneyukieita/.rbenv/versions/3.0.1/bin/ruby -I /Users/kaneyukieita/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20210612-7827-r866ys.rb extconf.rb --with-pg-config\=/usr/pgsql-9.3/bin/pg_config
 Using config values from /usr/pgsql-9.3/bin/pg_config
 sh: /usr/pgsql-9.3/bin/pg_config: No such file or directory
 sh: /usr/pgsql-9.3/bin/pg_config: No such file or directory
