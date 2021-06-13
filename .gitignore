@@ -75,3 +75,9 @@ yarn-debug.log*
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore docker-compose.yml
+/docker-compose.yml
+
+# Ignore database.yml
+/config/database.yml
