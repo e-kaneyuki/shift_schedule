@@ -274,6 +274,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3, >= 6.1.3.2)
   rspec-rails
+  rubocop
   rubocop-rails
   rubocop-rspec
   sass-rails (>= 6)
