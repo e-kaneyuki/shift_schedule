@@ -38,7 +38,7 @@ module ShiftSchedule
     config.generators.system_tests = nil
 
     config.generators do |g|
-      g.template_engine false
+      g.template_engine :erb
       g.javascripts false
       g.stylesheets false
       g.helper false
