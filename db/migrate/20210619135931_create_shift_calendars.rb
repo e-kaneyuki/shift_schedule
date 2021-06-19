@@ -13,7 +13,7 @@ class CreateShiftCalendars < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
-  def down
 
+  def down
   end
 end

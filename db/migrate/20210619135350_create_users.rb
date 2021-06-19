@@ -15,6 +15,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
+
   def down
   end
 end
