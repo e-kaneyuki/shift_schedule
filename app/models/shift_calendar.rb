@@ -1,0 +1,2 @@
+class ShiftCalendar < ApplicationRecord
+end
