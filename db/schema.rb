@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_084612) do
+ActiveRecord::Schema.define(version: 2021_06_24_133833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2021_06_21_084612) do
   end
 
   create_table "shift_calendars", force: :cascade do |t|
-    t.integer "shift_calender", null: false
-    t.bigint "community_id", null: false
+    t.integer "schedule_calender", null: false
+    t.bigint "staff_members_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,6 +42,11 @@ ActiveRecord::Schema.define(version: 2021_06_21_084612) do
     t.string "ward", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "desired_date_of_work"
+    t.datetime "desired_holiday_date"
+    t.float "the_number_of_paid_holidays", null: false
+    t.integer "possible_continuous_work", null: false
+    t.integer "hope_for_consecutive_holidays", null: false
   end
 
   create_table "users", force: :cascade do |t|
