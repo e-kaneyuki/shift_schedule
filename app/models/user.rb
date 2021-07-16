@@ -3,5 +3,5 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :password_digest, presence: true, length: { minimum: 6 }
-  validates :community_id, presence: true, uniqueness: true, numericality: { only_integer: true }
+  validates :community_id, presence: true, numericality: { only_integer: true }
 end
