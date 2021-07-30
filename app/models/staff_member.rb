@@ -20,9 +20,9 @@
 #  index_staff_members_on_name  (name) UNIQUE
 #
 class StaffMember < ApplicationRecord
-  belongs_to :shift_calendar
+  belongs_to :shift_calendar, optional: true
 
-  # スタッフの属性　名前　部門　病棟　役職
+  # スタッフの属性(名前,部門,病棟,役職)
   validates :name, presence: true, uniqueness: true, length: { maximum: 20 }
   validates :group, presence: true
   validates :ward, presence: true

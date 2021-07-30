@@ -21,5 +21,12 @@
 #
 FactoryBot.define do
   factory :staff_member do
+    name { "kaneyukichan" }
+    group{ "作業療法" }
+    ward { "2西" }
+    position { "一般" }
+    possible_continuous_work { 4 }
+    the_number_of_paid_holidays { 2.5 }
+    hope_for_consecutive_holidays { 2 }
   end
 end
