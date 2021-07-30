@@ -103,7 +103,25 @@ RSpec.describe StaffMember, type: :model do
     end
   end
 
-  # describe "役職(position)のバリデーションテスト" do
+  describe "役職(position)のバリデーションテスト" do
+    let(:staff_member) { FactoryBot.build(:staff_member) }
+    context "positionが入力されている場合" do
+      it "登録できる" do
+        expect(staff_member.position).not_to eq nil
+      end
+    end
+
+    context "positionが入力されていない場合" do
+      it "登録できない" do
+        another_staff_member = StaffMember.new(name: "kaneyukichan", group: "作業療法", ward: "2西", position: "", possible_continuous_work: 4,
+                                               the_number_of_paid_holidays: 2.5, hope_for_consecutive_holidays: 2)
+        expect(another_staff_member).to be_invalid
+        expect(another_staff_member.errors[:position]).to include("can't be blank")
+      end
+    end
+  end
+
+  # describe "のバリデーションテスト" do
   #   let(:user) { FactoryBot.build(:user) }
   #   context "パスワードが入力されている場合" do
   #     it "登録できる" do
