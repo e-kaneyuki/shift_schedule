@@ -27,14 +27,14 @@ RSpec.describe StaffMember, type: :model do
     let(:staff_member) { FactoryBot.build(:staff_member) }
     context "名前が入力されている場合" do
       it "登録できる" do
-        staff_member = StaffMember.new(name:"kaneyuki", group: "作業療法", ward: "2西", position: "一般" )
+        staff_member = StaffMember.new(name: "kaneyuki", group: "作業療法", ward: "2西", position: "一般")
         expect(staff_member.name).not_to eq nil
       end
     end
 
     context "名前が入力されていない場合" do
       it "登録できない" do
-        staff_member = StaffMember.new(name:"", group: "作業療法", ward: "2西", position: "一般" )
+        staff_member = StaffMember.new(name: "", group: "作業療法", ward: "2西", position: "一般")
         expect(staff_member).to be_invalid
         expect(staff_member.errors[:name]).to include("can't be blank")
       end
@@ -42,13 +42,13 @@ RSpec.describe StaffMember, type: :model do
 
     context "名前が20文字以内の場合" do
       it "登録できる" do
-        staff_member = StaffMember.new(name: "a" * 20, group: "作業療法", ward: "2西", position: "一般" )
+        staff_member = StaffMember.new(name: "a" * 20, group: "作業療法", ward: "2西", position: "一般")
         expect(staff_member).to be_valid
         expect(staff_member.name.length).to be <= 20
       end
     end
 
-    fcontext "名前が21文字以上の場合" do
+    context "名前が21文字以上の場合" do
       it "登録できない" do
         staff_member = StaffMember.new(name: "a" * 21, group: "作業療法", ward: "2西", position: "一般")
         expect(staff_member).to be_invalid
@@ -58,7 +58,8 @@ RSpec.describe StaffMember, type: :model do
 
     context "名前が重複している場合" do
       it "登録できない" do
-        StaffMember.create!(name: "kaneyukichan", group: "作業療法", ward: "2西", position: "一般", possible_continuous_work: "4", the_number_of_paid_holidays: "2.5", hope_for_consecutive_holidays: "2" )
+        StaffMember.create!(name: "kaneyukichan", group: "作業療法", ward: "2西", position: "一般", possible_continuous_work: "4", the_number_of_paid_holidays: "2.5",
+                            hope_for_consecutive_holidays: "2")
         staff_member = StaffMember.new(name: "kaneyukichan", group: "理学療法", ward: "4南", position: "リーダー")
         expect(staff_member).to be_invalid
         expect(staff_member.errors[:name]).to include("has already been taken")
@@ -76,7 +77,8 @@ RSpec.describe StaffMember, type: :model do
 
     context "groupが入力されていない場合" do
       it "登録できない" do
-        another_staff_member = StaffMember.new(name: "kaneyukichan", group: "", ward: "2西", position: "一般", possible_continuous_work: 4, the_number_of_paid_holidays: 2.5, hope_for_consecutive_holidays: 2 )
+        another_staff_member = StaffMember.new(name: "kaneyukichan", group: "", ward: "2西", position: "一般", possible_continuous_work: 4,
+                                               the_number_of_paid_holidays: 2.5, hope_for_consecutive_holidays: 2)
         expect(another_staff_member).to be_invalid
         expect(another_staff_member.errors[:group]).to include("can't be blank")
       end
