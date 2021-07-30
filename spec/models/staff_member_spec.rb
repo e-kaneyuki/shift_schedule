@@ -85,31 +85,23 @@ RSpec.describe StaffMember, type: :model do
     end
   end
 
-  # describe "病棟(ward)のバリデーションテスト" do
-  #   let(:user) { FactoryBot.build(:user) }
-  #   context "メールアドレスが入力されている場合" do
-  #     it "登録できる" do
-  #       expect(user.email).not_to eq nil
-  #     end
-  #   end
+  describe "病棟(ward)のバリデーションテスト" do
+    let(:staff_member) { FactoryBot.build(:staff_member) }
+    context "wardが入力されている場合" do
+      it "登録できる" do
+        expect(staff_member.ward).not_to eq nil
+      end
+    end
 
-  #   context "メールアドレスが入力されていない場合" do
-  #     it "登録できない" do
-  #       staff_member = StaffMember.new(name: "kanechan", email: "", password: "password")
-  #       expect(user).to be_invalid
-  #       expect(user.errors[:email]).to include("can't be blank")
-  #     end
-  #   end
-
-  #   context "メールアドレスが重複している場合" do
-  #     it "登録できない" do
-  #       User.create!(name: "kinchan", email: "kinchan@example.com", password: "password")
-  #       staff_member = StaffMember.new(name: "kanechan", email: "kinchan@example.com", password: "password")
-  #       expect(user).to be_invalid
-  #       expect(user.errors[:email]).to include("has already been taken")
-  #     end
-  #   end
-  # end
+    context "wardが入力されていない場合" do
+      it "登録できない" do
+        another_staff_member = StaffMember.new(name: "kaneyukichan", group: "作業療法", ward: "", position: "一般", possible_continuous_work: 4,
+                                               the_number_of_paid_holidays: 2.5, hope_for_consecutive_holidays: 2)
+        expect(another_staff_member).to be_invalid
+        expect(another_staff_member.errors[:ward]).to include("can't be blank")
+      end
+    end
+  end
 
   # describe "役職(position)のバリデーションテスト" do
   #   let(:user) { FactoryBot.build(:user) }
