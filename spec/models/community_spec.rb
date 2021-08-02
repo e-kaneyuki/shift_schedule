@@ -47,4 +47,20 @@ RSpec.describe Community, type: :model do
       end
     end
   end
+  describe "length: { maximum: 20 }" do
+    context "コミュニティー名が20文字以内の場合" do
+      it "登録できる" do
+        community = Community.create(communities_name: "a"*20 )
+        expect(community).to be_valid
+        expect(community.communities_name.length).to be <= 20
+      end
+    end
+    context "コミュニティー名重複している場合" do
+      it "登録できない" do
+        community = Community.create(communities_name: "a"*21 )
+        expect(community).to be_invalid
+        expect(community.errors[:communities_name]).to include("is too long (maximum is 20 characters)")
+      end
+    end
+  end
 end
