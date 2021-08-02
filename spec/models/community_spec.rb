@@ -60,7 +60,7 @@ RSpec.describe Community, type: :model do
       end
     end
 
-    context "コミュニティー名重複している場合" do
+    context "コミュニティー名21文字以上の場合" do
       it "登録できない" do
         community = Community.new(communities_name: "a" * 21)
         expect(community).to be_invalid
