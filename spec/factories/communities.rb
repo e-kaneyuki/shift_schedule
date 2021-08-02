@@ -13,5 +13,6 @@
 #
 FactoryBot.define do
   factory :community do
+    communities_name { "岡山病院" }
   end
 end
