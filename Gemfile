@@ -14,6 +14,10 @@ gem "sass-rails", ">= 6"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'
+gem 'devise-bootstrap-views', '~> 1.0'
+
 gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do
@@ -35,6 +39,7 @@ group :development do
   gem "rack-mini-profiler", "~> 2.0"
   gem "spring"
   gem "web-console", ">= 4.1.0"
+  gem 'rails-erd'
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
