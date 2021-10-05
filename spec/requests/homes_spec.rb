@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "Hellos", type: :request do
-  describe "GET /world" do
+RSpec.describe "Homes", type: :request do
+  describe "GET /index" do
     it "returns http success" do
-      get "/hello/world"
+      get "/homes/index"
       expect(response).to have_http_status(:success)
     end
   end
