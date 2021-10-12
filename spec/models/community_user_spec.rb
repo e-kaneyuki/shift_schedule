@@ -8,7 +8,6 @@
 #  community_id :bigint           not null
 #  user_id      :bigint           not null
 #
-# require "rails_helper"
 
 # RSpec.describe CommunityUser, type: :model do
 #   pending "add some examples to (or delete) #{__FILE__}"
