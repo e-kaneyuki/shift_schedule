@@ -50,6 +50,6 @@ module ShiftSchedule
                        request_specs: true
     end
 
-    config.api_only = true
+    config.api_only = false
   end
 end
