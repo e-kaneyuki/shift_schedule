@@ -2,8 +2,8 @@
 
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
+    registrations: "users/registrations",
+    sessions: "users/sessions",
   }
   # resources :leader, only: [:show]
   get "leaders/show"
