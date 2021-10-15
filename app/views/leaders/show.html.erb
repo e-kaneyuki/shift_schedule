@@ -1,2 +1,16 @@
 <h1>Leaders#show</h1>
 <p>Find me in app/views/leaders/show.html.erb</p>
+
+<%= link_to "新規登録", root_path, class: 'btn btn-primary' %>
+<%= link_to "スタッフ登録", root_path, class: 'btn btn-primary' %>
+<%= link_to "編集", root_path, class: 'btn btn-primary' %>
+<%= link_to "過去リスト", root_path, class: 'btn btn-primary' %>
+
+
+
+<%
+=begin%>
+ <%= button_to "リーダーホーム画面へ戻る", {controller: 'leaders', action: 'show'}, {method: :get} %>
+<%= link_to "リーダーホーム画面へ戻る", leaders_show_path, class: 'btn btn-primary' %>
+<%
+=end%>
