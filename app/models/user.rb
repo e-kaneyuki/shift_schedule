@@ -5,6 +5,7 @@
 #  id                     :bigint           not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  name                   :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
@@ -23,5 +24,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :communities, through: :community_users
 
-  # validates :name, presence: true, uniqueness: true, length: { maximum: 30 }
+  validates :name, presence: true, length: { maximum: 30 }
 end
