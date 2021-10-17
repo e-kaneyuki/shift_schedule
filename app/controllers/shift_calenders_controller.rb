@@ -12,7 +12,15 @@ class ShiftCalendersController < ApplicationController
 
   end
 
-  def delete
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
 
   end
 end
