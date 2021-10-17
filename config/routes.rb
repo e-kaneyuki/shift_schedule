@@ -5,10 +5,8 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     sessions: "users/sessions",
   }
-  # resources :leader, only: [:show]
+
   get "leaders/show"
   root "homes#index"
-  namespace :leaders do
-   resources :shift_calender
-  end
+  resources :shift_calenders
 end
