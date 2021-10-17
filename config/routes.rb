@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # resources :leader, only: [:show]
   get "leaders/show"
   root "homes#index"
-  resources :shift_calender
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace :leaders do
+   resources :shift_calender
+  end
 end
